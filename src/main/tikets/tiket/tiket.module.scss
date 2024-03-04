@@ -1,0 +1,21 @@
+.tiket {
+  border-radius: 5px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.twise {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 20px;
+}

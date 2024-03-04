@@ -1,0 +1,25 @@
+.options {
+  height: 50px;
+  width: auto;
+  border-radius: 5px;
+  display: flex;
+  overflow: hidden;
+  border: 1px solid rgba(223, 229, 236, 1);
+}
+
+.button {
+  padding: 0 70px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 1);
+  border: 0;
+}
+
+.button.click {
+  background-color: rgba(33, 150, 243, 1);
+  color: rgba(255, 255, 255, 1);
+  border: 0;
+}
