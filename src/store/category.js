@@ -9,11 +9,10 @@ const categorySlice = createSlice({
   reducers: {
     change(state) {
       state.value = !state.value;
-      return state;
+      state.count = 1;
     },
     upCount(state) {
       state.count += 1;
-      return state;
     },
   },
 });

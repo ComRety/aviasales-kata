@@ -29,30 +29,28 @@ const transfer = createSlice({
       return stateNew;
     },
     ones(state, actions) {
-      const stateNew = { ...state };
-      const keys = Object.keys(stateNew);
-      const values = Object.values(stateNew);
+      const keys = Object.keys(state);
+      const values = Object.values(state);
       let count = 0;
       values.forEach((element) => {
         if (element) {
           count += 1;
         }
       });
-      if (stateNew[actions.payload] && stateNew.all) {
+      if (state[actions.payload] && state.all) {
         keys.forEach((element) => {
           if (element === 'all' || element === actions.payload) {
-            stateNew[element] = false;
+            state[element] = false;
           } else {
-            stateNew[element] = true;
+            state[element] = true;
           }
         });
-      } else if (!stateNew[actions.payload] && count === 4) {
-        stateNew.all = true;
-        stateNew[actions.payload] = true;
+      } else if (!state[actions.payload] && count === 3) {
+        state.all = true;
+        state[actions.payload] = true;
       } else {
-        stateNew[actions.payload] = !stateNew[actions.payload];
+        state[actions.payload] = !state[actions.payload];
       }
-      return stateNew;
     },
   },
 });

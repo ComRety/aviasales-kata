@@ -10,6 +10,7 @@ const ticketsSlce = createSlice({
     error: 200,
     key: '',
     stop: false,
+    progress: 0,
   },
   reducers: {
     getKey(state, action) {
@@ -20,18 +21,22 @@ const ticketsSlce = createSlice({
     builder
       .addCase(getTickets.pending, (state) => {
         state.isloading = true;
-        state.error = 200;
       })
       .addCase(getTickets.fulfilled, (state, action) => {
+        if (action.payload.stop) {
+          state.progress = 100;
+        }
+        state.progress += 5;
         if (action.payload.tickets) {
-          state.stop = action.payload.stop;
           state.tikets.push(...action.payload.tickets);
+          if (action.payload.stop) {
+            state.stop = action.payload.stop;
+          }
         }
         state.isloading = false;
-        state.error = 200;
       })
       .addCase(getTickets.rejected, (state, action) => {
-        state.stop = true;
+        console.log('ERROR');
         state.isloading = false;
         state.error = action.payload;
       });

@@ -8,7 +8,7 @@ export default function Checkbox({ id, label, checked, fun }) {
   return (
     <li className={classes.item}>
       <label htmlFor={id} className={classes.text}>
-        <input type="checkbox" id={id} className={classes.check} checked={checked} onClick={() => dispatch(fun(id))} />
+        <input type="checkbox" id={id} className={classes.check} checked={checked} onChange={() => dispatch(fun(id))} />
         <span className={classes.checkbox} />
         {label}
       </label>

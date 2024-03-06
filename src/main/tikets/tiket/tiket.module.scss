@@ -19,3 +19,27 @@
   grid-template-columns: repeat(3, 1fr);
   row-gap: 20px;
 }
+
+@media (max-width: 400px) {
+  .twise {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .one {
+    order: 0;
+  }
+  .two {
+    order: 2;
+  }
+  .three {
+    order: 4;
+  }
+  .four {
+    order: 1;
+  }
+  .five {
+    order: 3;
+  }
+  .six {
+    order: 5;
+  }
+}

@@ -1,13 +1,15 @@
 .options {
   height: 50px;
-  width: auto;
   border-radius: 5px;
   display: flex;
+  justify-content: center;
   overflow: hidden;
   border: 1px solid rgba(223, 229, 236, 1);
 }
 
 .button {
+  display: flex;
+  align-items: center;
   padding: 0 70px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
@@ -22,4 +24,19 @@
   background-color: rgba(33, 150, 243, 1);
   color: rgba(255, 255, 255, 1);
   border: 0;
+}
+
+@media (max-width: 850px) {
+  .button {
+    padding: 0;
+    justify-content: center;
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: 400px) {
+  .options {
+    flex-direction: column;
+    height: 100px;
+  }
 }

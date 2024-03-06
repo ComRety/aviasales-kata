@@ -7,6 +7,7 @@ import './reset.css';
 import './style.scss';
 import getTickets from './store/getTickets';
 import { getKey } from './store/tickets';
+import Progress from './progress/Progress';
 
 export default function App() {
   const dispatsh = useDispatch();
@@ -27,14 +28,12 @@ export default function App() {
   useEffect(() => {
     if (key && stop === false) {
       dispatsh(getTickets(key));
-      if (error !== 200) {
-        console.log('stop');
-      }
     }
   }, [key, tickets, stop, error]);
 
   return (
     <>
+      <Progress />
       <Header />
       <Main />
     </>

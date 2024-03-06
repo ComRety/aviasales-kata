@@ -58,16 +58,17 @@ export default function Tickets() {
           width: '100%',
         }}
       >
-        <Alert message="Info Text" type="info" />
+        <Alert message="Рейсов, подходящих под заданные фильтры, не найдено" className={classes.info} type="info" />
       </Space>
     );
   }
 
   return (
     <div className={classes.tikets}>
-      {removeArray.map((item) => (
-        <Tiket item={item} />
-      ))}
+      {removeArray.map((item, id) => {
+        const key = id * count;
+        return <Tiket item={item} key={key} />;
+      })}
       <AllTikets />
     </div>
   );
